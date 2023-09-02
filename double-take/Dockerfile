@@ -18,7 +18,8 @@ RUN \
     && S6_ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
     elif [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
-    elif [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi \
+    elif [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; \
+    elif [ "${BUILD_ARCH}" = "arm64" ]; then S6_ARCH="arm64"; fi \
     \
     && curl -L -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz" \
         | tar -C / -Jxpf - \
@@ -42,7 +43,7 @@ ENV CONFIG_PATH=/data/options.json
 LABEL \
   io.hass.version="1.13.11.2" \
   io.hass.type="addon" \
-  io.hass.arch="aarch64|amd64"
+  io.hass.arch="arm64|aarch64|amd64"
 
 ADD --link https://github.com/hassio-addons/bashio/archive/v0.14.3.tar.gz /tmp/bashio.tar.gz
 RUN mkdir -p /tmp/bashio \
