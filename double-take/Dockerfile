@@ -4,7 +4,7 @@ ARG BUILD_FROM
 FROM skrashevich/double-take:1.13.11.2
 
 ARG S6_OVERLAY_VERSION=3.1.5.0
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH=arm64
 RUN \
     apt-get update \
     \
