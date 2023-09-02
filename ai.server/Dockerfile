@@ -8,4 +8,4 @@ ENV CONFIG_PATH=/data/options.json
 LABEL \
   io.hass.version="2.1.11" \
   io.hass.type="addon" \
-  io.hass.arch="aarch64|amd64"
+  io.hass.arch="arm64|aarch64|amd64"
