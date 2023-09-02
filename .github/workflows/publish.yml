@@ -28,6 +28,7 @@ jobs:
           args: |
             --amd64 \
             --aarch64 \
+            --arm64 \
             --no-latest \
             -i hassio-addon-${{ matrix.target }}-{arch} \
             --target ${{ matrix.target }} \
