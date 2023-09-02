@@ -6,7 +6,7 @@ panel_icon: mdi:face-recognition
 slug: ai-server
 description: standalone open-source AI server for raspberryPi 4
 arch:
-  - arm64
+  - aarch64
 startup: application
 boot: auto
 ingress: true
