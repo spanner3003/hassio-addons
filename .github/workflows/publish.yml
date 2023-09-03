@@ -26,8 +26,7 @@ jobs:
         uses: home-assistant/builder@master
         with:
           args: |
-            --amd64 \
-            --aarch64 \
+            --all \
             --no-latest \
             -i hassio-addon-${{ matrix.target }}-{arch} \
             --target ${{ matrix.target }} \
