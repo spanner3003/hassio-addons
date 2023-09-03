@@ -20,6 +20,5 @@ jobs:
             --test \
             --amd64 \
             --aarch64 \
-            --arm64 \
             --target ${{ matrix.target }} \
             --docker-hub ${{ secrets.DOCKER_USERNAME }}
