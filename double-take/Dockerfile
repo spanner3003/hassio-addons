@@ -6,8 +6,8 @@ FROM skrashevich/double-take:1.13.11.2
 ARG S6_OVERLAY_VERSION=3.1.5.0
 ARG BUILD_ARCH=arm64
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates jq tzdata xz-utils
-ARG S6_ARCH="${BUILD_ARCH}" \
-    && if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
+ARG S6_ARCH="${BUILD_ARCH}"
+RUN if [ "${BUILD_ARCH}" = "i386" ]; then S6_ARCH="i686"; \
     elif [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
     elif [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp
