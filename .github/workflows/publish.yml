@@ -30,4 +30,4 @@ jobs:
             --no-latest \
             -i hassio-addon-${{ matrix.target }}-{arch} \
             --target ${{ matrix.target }} \
-            --test
+            --docker-hub ghcr.io/${{ secrets.DOCKER_USERNAME }}
